@@ -137,6 +137,14 @@ function generateGCMPayload(requestData, pushId, timeStamp, expirationTime) {
     if (requestData.hasOwnProperty(key)) {
       payload[key] = requestData[key];
     }
+    //if there is no notification from the data then fill in notification based on alert
+    //this is to support sending notification from ParseDashboard to ios devices using FCM
+    else if(key == 'notification') {
+      payload[key] = {
+        "body" : requestData.data["alert"],
+        "title": requestData.data["title"] || requestData.data["alert"]
+      };
+    }
   });
 
   if (expirationTime) {
