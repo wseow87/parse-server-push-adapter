@@ -1,7 +1,7 @@
 {
-  "name": "@parse/push-adapter",
+  "name": "@alikerja/push-adapter",
   "version": "4.1.2",
-  "description": "Base parse-server-push-adapter",
+  "description": "Alikerja parse-server-push-adapter",
   "main": "lib/index.js",
   "files": [
     "lib/"
